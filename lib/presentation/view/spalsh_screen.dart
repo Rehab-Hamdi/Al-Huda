@@ -1,4 +1,5 @@
-import 'package:al_huda/presentation/ui/home.dart';
+
+import 'package:al_huda/presentation/view/home.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
             body: Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('assets/images/splashScreenLight'),
+        image: AssetImage('assets/images/splashScreenLight.jpeg'),
         fit: BoxFit.cover,
       )),
     )));
