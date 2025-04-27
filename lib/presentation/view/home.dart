@@ -1,8 +1,9 @@
-import 'package:al_huda/core/custome_widgets/bottomIconImage.dart';
+import 'package:al_huda/components/app_local.dart';
+import 'package:al_huda/core/custom_widgets/bottomIconImage.dart';
 import 'package:flutter/material.dart';
 
-import 'hadeth.dart';
-import 'payertimes.dart';
+import 'hadith.dart';
+import 'payerTimes.dart';
 import 'quran.dart';
 import 'sepha.dart';
 import 'settings.dart';
@@ -21,8 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   dynamic screens = [
     const PrayerTimesScreen(),
     const QuranScreen(),
-    const HadethScreen(),
-    const SephaScreen(),
+    const HadithScreen(),
+    const TasbeehScreen(),
     const SettingsScreen(),
   ];
 
@@ -37,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
           unselectedLabelStyle: const TextStyle(fontSize: 12),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.black,
-          currentIndex: currentScreen,  // it is very important to make change in style of label
+          currentIndex:
+              currentScreen, // it is very important to make change in style of label
           onTap: (int index) {
             setState(() {
               currentScreen = index;
@@ -48,26 +50,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: BottomIconsImage(
                   imageName:
                       'assets/images/bottomNavigationBarIcons/mosque.png',
+                  color: currentScreen == 0 ? Colors.white : Colors.black,
                 ),
-                label: 'Prayer Times'),
+                label: '${getLang(context, 'Prayer Times')}'),
             BottomNavigationBarItem(
                 icon: BottomIconsImage(
                   imageName: 'assets/images/bottomNavigationBarIcons/quran.png',
                 ),
-                label: 'Quran'),
+                label: '${getLang(context, 'Quran')}'),
             BottomNavigationBarItem(
                 icon: BottomIconsImage(
                   imageName:
                       'assets/images/bottomNavigationBarIcons/hadeth.png',
                 ),
-                label: 'Hadeth'),
+                label: '${getLang(context, 'Hadeth')}'),
             BottomNavigationBarItem(
                 icon: BottomIconsImage(
                   imageName: 'assets/images/bottomNavigationBarIcons/sepha.png',
                 ),
-                label: 'Sepha'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.settings, size: 28,), label: 'Settings'),
+                label: '${getLang(context, 'Sepha')}'),
+            BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.settings,
+                  size: 28,
+                ),
+                label: '${getLang(context, 'Settings')}'),
           ],
           //very important
           type: BottomNavigationBarType

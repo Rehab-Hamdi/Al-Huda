@@ -9,3 +9,7 @@ class ScreenUtils {
     return MediaQuery.of(context).size.width;
   }
 }
+
+class MyColors {
+  static const Color appColor = Color(0xFFb7935f);
+}
